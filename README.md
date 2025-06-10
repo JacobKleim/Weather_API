@@ -116,7 +116,10 @@ FORECAST_WEATHER_CACHE_TIMEOUT=900
 - `api/serializers.py` — DRF-сериализаторы
 - `api/views.py` — вьюхи (REST API)
 - `api/models.py` — модель `ForecastOverride`
+- `api/validators.py` — валидатор `validate_forecast_date`
 - `api/weather_provider/weatherbit.py` — доступ к API Weatherbit
+
+- `src/utils/decorators.py` — декоратор `external_api_error_handler`
 
 ---
 
