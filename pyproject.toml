@@ -1,0 +1,46 @@
+[tool.poetry]
+name = "weather_api"
+version = "0.1.0"
+description = ""
+authors = ["Яков"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^5.2.2"
+psycopg2-binary = "^2.9.10"
+environs = "^14.2.0"
+djangorestframework = "^3.16.0"
+requests = "^2.32.4"
+django-redis = "^5.4.0"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.11.13"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+exclude = [
+    "venv",
+    "docker",
+    ".git",
+    "__pycache__",
+    "migrations/*",
+    "*.pyc",
+]
+
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+ignore = ["E203", "E266", "E501"]
+select = ["E", "F", "W", "I"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
