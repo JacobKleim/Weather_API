@@ -45,6 +45,7 @@
 ```env
 DJANGO_SECRET_KEY=django-insecure-key
 DJANGO_DEBUG=True
+ALLOWED_HOSTS=127.0.0.1,localhost,yourdomain.com
 
 POSTGRES_USER=fastapi_user
 POSTGRES_PASSWORD=fastapi_password
@@ -55,6 +56,8 @@ WEATHERBIT_URL=https://api.weatherbit.io/v2.0
 
 CURRENT_WEATHER_CACHE_TIMEOUT=300
 FORECAST_WEATHER_CACHE_TIMEOUT=900
+
+REDIS_CACHE_URL=redis://redis:6379/1
 ```
 
 ---

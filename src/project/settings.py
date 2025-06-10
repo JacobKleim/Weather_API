@@ -26,19 +26,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env("DJANGO_SECRET_KEY")
+SECRET_KEY = env.str("DJANGO_SECRET_KEY")
 
 DEBUG = env.bool("DJANGO_DEBUG", default=False)
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
 
-WEATHERBIT_API_KEY = env("WEATHERBIT_API_KEY")
+WEATHERBIT_API_KEY = env.str("WEATHERBIT_API_KEY")
 
-WEATHERBIT_URL = env("WEATHERBIT_URL")
+WEATHERBIT_URL = env.str("WEATHERBIT_URL")
 
 CURRENT_WEATHER_CACHE_TIMEOUT = env.int("CURRENT_WEATHER_CACHE_TIMEOUT")
 FORECAST_WEATHER_CACHE_TIMEOUT = env.int("FORECAST_WEATHER_CACHE_TIMEOUT")
 
+REDIS_CACHE_URL = env.str("REDIS_CACHE_URL")
 
 # Application definition
 
@@ -100,7 +101,7 @@ DATABASES = {
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://redis:6379/1",
+        "LOCATION": env("REDIS_CACHE_URL"),
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         },
