@@ -111,14 +111,13 @@ FORECAST_WEATHER_CACHE_TIMEOUT=900
 
 ## 📁 Структура проекта
 
-- `api/` — основное Django-приложение
-- `api/services.py` — бизнес-логика (запросы к API, кеширование)
-- `api/serializers.py` — DRF-сериализаторы
-- `api/views.py` — вьюхи (REST API)
-- `api/models.py` — модель `ForecastOverride`
-- `api/validators.py` — валидатор `validate_forecast_date`
-- `api/weather_provider/weatherbit.py` — доступ к API Weatherbit
-
+- `src/api/` — основное Django-приложение
+- `src/api/services.py` — бизнес-логика (запросы к API, кеширование)
+- `src/api/serializers.py` — DRF-сериализаторы
+- `src/api/views.py` — вьюхи (REST API)
+- `src/api/models.py` — модель `ForecastOverride`
+- `src/api/validators.py` — валидатор `validate_forecast_date`
+- `src/api/weather_provider/weatherbit.py` — доступ к API Weatherbit
 - `src/utils/decorators.py` — декоратор `external_api_error_handler`
 
 ---
