@@ -4,14 +4,13 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('api', '0001_initial'),
+        ("api", "0001_initial"),
     ]
 
     operations = [
         migrations.AddIndex(
-            model_name='forecastoverride',
-            index=models.Index(fields=['city', 'date'], name='api_forecas_city_e9ca35_idx'),
+            model_name="forecastoverride",
+            index=models.Index(fields=["city", "date"], name="api_forecas_city_e9ca35_idx"),
         ),
     ]

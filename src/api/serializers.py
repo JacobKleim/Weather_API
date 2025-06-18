@@ -1,4 +1,5 @@
 from rest_framework import serializers
+
 from .models import ForecastOverride
 from .validators import validate_forecast_date, validate_temperatures
 
@@ -14,17 +15,11 @@ class ForecastOverrideSerializer(serializers.ModelSerializer):
     )
     min_temperature = serializers.FloatField(
         required=True,
-        help_text=(
-            "Минимальная температура в градусах Цельсия. "
-            "Должна быть не выше максимальной температуры."
-        ),
+        help_text=("Минимальная температура в градусах Цельсия. Должна быть не выше максимальной температуры."),
     )
     max_temperature = serializers.FloatField(
         required=True,
-        help_text=(
-            "Максимальная температура в градусах Цельсия. "
-            "Должна быть не ниже минимальной температуры."
-        ),
+        help_text=("Максимальная температура в градусах Цельсия. Должна быть не ниже минимальной температуры."),
     )
 
     class Meta:
