@@ -29,7 +29,7 @@ exclude = [
     "docker",
     ".git",
     "__pycache__",
-    "migrations/*",
+    "**/migrations/**",
     "*.pyc",
 ]
 
